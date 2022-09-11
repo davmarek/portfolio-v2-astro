@@ -25,10 +25,7 @@ jobs:
         with:
           node-version: 16.17.0
 
-      - name: Install yarn dependencies
-        run: yarn
-
-      - name: Install yarn dependencies
+      - name: Build website
         run: yarn build
 
       - name: Archive production artifact
