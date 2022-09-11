@@ -5,14 +5,15 @@ import SectionAbout from '../components/SectionAbout.astro'
 import SectionContact from '../components/SectionContact.astro'
 ---
 
-<Layout title="Home">
+<Layout title="David Marek">
   <SectionHero />
   <SectionAbout />
   <SectionContact />
 </Layout>
 
 <script>
-  import { gsap, ScrollTrigger } from 'gsap/all'
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
   gsap.registerPlugin(ScrollTrigger)
 
   gsap

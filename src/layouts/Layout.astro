@@ -10,11 +10,44 @@ const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="cs">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta http-equiv="Cache-control" content="public" />
+    <meta http-equiv="Expires" content="604800" />
+
+    <meta name="googlebot" content="index, noimageindex" />
+    <meta name="robots" content="index, noimageindex" />
+
+    <!--SEO-->
+    <meta name="description" content="Portfolio prací Davida Marka" />
+    <meta
+      name="keywords"
+      content="David,Marek,vývojář,programátor,html,css,javascript,dev,developer,web,stránky,webové,dev,weby"
+    />
+    <meta name="author" content="David Marek" />
+    <!--Open Graph Tags-->
+    <meta property="og:title" content="David Marek - Vývojář" />
+    <meta property="og:site_name" content="davidmarek.8u.cz" />
+    <meta property="og:description" content="Portfolio prací Davida Marka" />
+    <meta property="og:type" content="portfolio" />
+    <meta property="og:image" content="img/face3.webp" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="David Marek" />
+    <meta property="og:url" content="https://davmarek.cz" />
+    <!--Twitter Card-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@davamarek" />
+    <meta name="twitter:title" content="David Marek - Vývojář" />
+    <meta name="twitter:description" content="Portfolio prací Davida Marka" />
+    <meta name="twitter:image" content="img/face3.webp" />
+    <!--Canonical Tag-->
+    <link rel="canonical" href="https://davmarek.cz" />
+
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
     <title>{title}</title>
   </head>
   <body>
