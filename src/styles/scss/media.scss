@@ -1,0 +1,43 @@
+/*sm 576px
+md 768px
+lg 992px
+xl 1200px
+*/
+@media only screen and (min-width: 576px) {
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 96px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  section.contact {
+    .contact__text {
+      font-size: 22px;
+    }
+
+    .contact__email {
+      font-size: 24px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  section:not(.hero) .container {
+    max-width: 1000px;
+  }
+}

@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Contact">
+  <main>
+    <section class="contact">
+      <div class="container">
+        <div class="contact__heading">
+          <h1>kontakt<span class="primary-color glow">.</span></h1>
+        </div>
+        <div class="contact__text">
+          Proberme možnosti spolupráce na vašem projektu. Zeptejte se nebo mě
+          rovnou poptejte.
+        </div>
+        <div class="contact__email">
+          email -<br />
+          <a href="mailto:info@davmarek.cz">info@davmarek.cz</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  section.contact {
+    padding: 200px 0;
+
+    background-color: $dark-grey;
+
+    display: grid;
+    place-items: center;
+
+    .contact__text {
+      color: $grey;
+      line-height: 1.8;
+      max-width: 45ch;
+    }
+
+    .contact__email {
+      margin-top: 64px;
+      font-size: 22px;
+      a {
+        color: $secondary;
+        border-bottom: 2px solid $secondary;
+
+        &:focus,
+        &:hover {
+          color: white;
+          border-color: white;
+          outline: none;
+        }
+      }
+    }
+  }
+</style>

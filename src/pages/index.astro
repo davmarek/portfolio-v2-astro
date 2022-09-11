@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro'
+import SectionHero from '../components/SectionHero.astro'
+import SectionAbout from '../components/SectionAbout.astro'
+import SectionContact from '../components/SectionContact.astro'
+---
+
+<Layout title="Home">
+  <SectionHero />
+  <SectionAbout />
+  <SectionContact />
+</Layout>
+
+<script>
+  import { gsap, ScrollTrigger } from 'gsap/all'
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: '80% top',
+        scrub: true,
+      },
+    })
+    .to('.hero__text h1', {
+      y: -240,
+    })
+    .to(
+      '.hero__text .sub',
+      {
+        y: -180,
+      },
+      0
+    )
+    .to(
+      '.hero__work .work__text',
+      {
+        y: -140,
+      },
+      0
+    )
+    .to(
+      '.hero__work .work__slider',
+      {
+        y: -100,
+      },
+      0
+    )
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.about',
+        start: '62% center',
+        end: '120% top',
+        scrub: true,
+        pin: '.about',
+      },
+    })
+    .to('.about__img', {
+      opacity: 0,
+      y: -20,
+      scale: 0.8,
+    })
+    .from('.about__text', {
+      opacity: 0,
+      y: 80,
+    })
+</script>

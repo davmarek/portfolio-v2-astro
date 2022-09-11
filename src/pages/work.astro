@@ -1,0 +1,357 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Work">
+  <section class="hero">
+    <div class="container">
+      <h1>portfolio<span class="secondary-color glow">.</span></h1>
+    </div>
+  </section>
+
+  <section class="work grey hbc" id="hbc">
+    <div class="work__text">
+      <div class="work__type">Sportovní web</div>
+      <h2 class="work__heading">HBC Malenovice</h2>
+      <p class="work__desc">
+        Web hokejbalového klubu v Malenovicích ve Zlíně byl můj první větší
+        projekt. Web slouží jako informační kanál pro výsledky zápasů, rozpisy a
+        pro články o jednotlivých zápasech.
+      </p>
+      <a href="http://hbcmalenovice.cz/" class="work__a" target="_blank"
+        >hbcmalenovice.cz&nbsp;&gt;</a
+      >
+    </div>
+    <div class="work__images desktop-mobile">
+      <img
+        src="img/portfolio/hbc_desktop.png"
+        alt="hbc_desktop"
+        class="desktop"
+      />
+      <img src="img/portfolio/hbc_mobile.png" alt="hbc_mobile" class="mobile" />
+    </div>
+  </section>
+
+  <section class="work ws" id="ws">
+    <div class="work__text">
+      <div class="work__type">Aplikace / databáze</div>
+      <h2 class="work__heading">Wrapstyle DB</h2>
+      <p class="work__desc">
+        Wrapstyle, firma zabívající se polepy aut, potřeboval program pro správu
+        produktů. Systém, který jsem vytvořil, jim pomáhá s tvorbou PDF výpisů
+        produktů, které nadále rozesílají franšízám po celém světě.
+      </p>
+    </div>
+    <div class="work__images tiles">
+      <img src="img/portfolio/ws_index.png" alt="ws_index" />
+      <img src="img/portfolio/ws_add.png" alt="ws_add" />
+    </div>
+  </section>
+
+  <section class="work grey omega" id="omega">
+    <div class="work__text">
+      <div class="work__type">Prezentační web</div>
+      <h2 class="work__heading">OmegaSoft</h2>
+      <p class="work__desc">
+        Web smyšlené IT firmy OmegaSoft je školní cvičení s účelem vytvořit
+        jednoduchý, statický, moderní a responzivní web.
+      </p>
+      <a
+        href="http://davidmarek.8u.cz/vytvory/omegasoft/"
+        class="work__a"
+        target="_blank">omegasoft&nbsp;&gt;</a
+      >
+    </div>
+    <div class="work__images desktop-mobile">
+      <img
+        src="img/portfolio/omega_desktop.png"
+        alt="omega_desktop"
+        class="desktop"
+      />
+      <img
+        src="img/portfolio/omega_mobile.png"
+        alt="omega_mobile"
+        class="mobile"
+      />
+    </div>
+  </section>
+
+  <section class="work experiments" id="experiments">
+    <div class="work__text">
+      <div class="work__type">Web / aplikace / databáze</div>
+      <h2 class="work__heading">Webové experimenty</h2>
+      <p class="work__desc">
+        Tato stránka obsahuje sérii miniprojektů zaměřujících se na různé webové
+        funkčnosti. Každý experiment je jeden úkol, jehož cílem bylo vytvořit
+        anketu, fórum, rezervační systém nebo e-shop.
+      </p>
+      <a href="http://davidovy-php-ukoly.8u.cz/" class="work__a" target="_blank"
+        >experimenty&nbsp;&gt;
+      </a>
+    </div>
+    <div class="work__images tiles">
+      <img src="img/portfolio/experiments-rezervo.png" alt="rezervo" />
+      <img src="img/portfolio/experiments-eshop.png" alt="eshop" />
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+  section.work {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .work__text {
+      padding: 64px 32px;
+
+      .work__type {
+        text-transform: uppercase;
+        color: $grey;
+      }
+
+      .work__heading {
+        font-size: 36px;
+        margin-top: 8px;
+      }
+
+      .work__desc {
+        line-height: 1.8;
+        max-width: 45ch;
+      }
+
+      .work__a {
+        display: inline-block;
+
+        background-color: $primary;
+        color: white;
+
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        padding: 8px 24px;
+        border-radius: 8px;
+
+        transition: 500ms;
+      }
+
+      .work__a:focus,
+      .work__a:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .work__images.desktop-mobile {
+      position: relative;
+
+      * {
+        position: absolute;
+      }
+
+      .desktop {
+        bottom: 0;
+        height: 100%;
+        left: 10%;
+      }
+
+      .mobile {
+        bottom: -5%;
+        height: 65%;
+        right: 50%;
+        transform: translateX(80%);
+        filter: drop-shadow(0 4px 32px rgba(0, 0, 0, 0.5));
+      }
+    }
+
+    .work__images.tiles {
+      position: relative;
+
+      * {
+        position: absolute;
+        height: 55%;
+        top: 35%;
+        left: 50%;
+      }
+
+      *:first-child {
+        transform: translate(-75%, -75%);
+      }
+
+      *:last-child {
+        transform: translate(-25%, -25%);
+        filter: drop-shadow(0 4px 32px rgba(0, 0, 0, 0.5));
+      }
+    }
+  }
+
+  section.work.grey {
+    background-color: $dark-grey;
+  }
+
+  section.work.hbc {
+    .work__a {
+      background-color: #005f38;
+    }
+  }
+
+  section.work.omega {
+    .work__a {
+      color: $black;
+      background-color: #ffff01;
+    }
+  }
+
+  section.work.experiments {
+    .work__a {
+      background-color: #ff2525;
+      background: linear-gradient(to bottom right, #ffe53b, #ff2525);
+    }
+  }
+
+  @media only screen and (min-width: $size-sm) {
+    section.work .work__images.desktop-mobile {
+      .desktop {
+        bottom: 0;
+        height: 110%;
+        left: 50%;
+        transform: translateX(-70%);
+      }
+    }
+  }
+  @media only screen and (min-width: $size-md) {
+    section.work {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+
+      .work__text {
+        padding: calc(15vh + 80px) 32px;
+        padding-left: 0;
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .work__images {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .work__images.desktop-mobile {
+        .desktop {
+          bottom: 0;
+          left: 0;
+          height: auto;
+          width: 90%;
+          max-width: 40vh;
+          transform: translateX(0);
+        }
+
+        .mobile {
+          bottom: -5%;
+          right: 45%;
+          height: auto;
+          width: 30%;
+          max-width: 20vh;
+          transform: translateX(100%);
+        }
+      }
+
+      .work__images.tiles {
+        * {
+          width: 50%;
+          max-width: 35vh;
+          height: auto;
+          top: 50%;
+          left: 50%;
+        }
+
+        *:first-child {
+          transform: translate(-80%, -80%);
+        }
+
+        *:last-child {
+          transform: translate(-30%, -30%);
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: $size-lg) {
+    section.work {
+      .work__images.desktop-mobile {
+        .desktop {
+          bottom: 0;
+          left: 0;
+          height: auto;
+          width: 90%;
+          max-width: 30vh;
+          transform: translateX(0);
+        }
+
+        .mobile {
+          bottom: -5%;
+          right: 45%;
+          height: auto;
+          width: 30%;
+          max-width: 20vh;
+          transform: translateX(100%);
+        }
+      }
+
+      .work__images.tiles {
+        * {
+          width: 50%;
+          max-width: 35vh;
+          height: auto;
+          top: 50%;
+          left: 50%;
+        }
+
+        *:first-child {
+          transform: translate(-80%, -80%);
+        }
+
+        *:last-child {
+          transform: translate(-30%, -30%);
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: $size-xl) {
+    section.work .work__images.desktop-mobile {
+      .desktop {
+        bottom: 0;
+        left: 30%;
+        height: auto;
+        width: 75%;
+        max-width: 35vh;
+      }
+
+      .mobile {
+        bottom: -5%;
+        right: 45%;
+        height: auto;
+        width: auto;
+        max-width: auto;
+        transform: translateX(100%);
+      }
+    }
+
+    .work__images.tiles {
+      * {
+        width: 50%;
+        max-width: 35vh;
+        height: auto;
+        top: 50%;
+        left: 50%;
+      }
+
+      *:first-child {
+        transform: translate(-80%, -80%);
+      }
+
+      *:last-child {
+        transform: translate(-30%, -30%);
+      }
+    }
+  }
+</style>

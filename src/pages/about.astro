@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="About">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>o mně<span class="primary-color glow">.</span></h1>
+      </div>
+    </section>
+
+    <section class="about--big">
+      <div class="container">
+        <div class="about__text">
+          <p>
+            Jsem studentem vysoké školy ve Zlíne, zaměřené na Softwarové
+            inženýrství. Jsem absolventem Creative Hill College ve Zlíně, kde
+            jsem studoval obor Vývoj her a multimediálních aplikací.
+          </p>
+
+          <p>
+            Mou hlavní specializací je
+            <span class="secondary-color">vývoj webů</span> a webových aplikací,
+            práce s CMS WordPress či programování v jazycích Java, PHP, JavaScript.
+          </p>
+
+          <p>
+            Nabízím tvorbu
+            <span class="secondary-color">
+              webových stránek, které budou vyhovovat
+            </span>
+            dnešním požadavků náročných uživatelů.
+          </p>
+        </div>
+        <div class="about__img">
+          <img src="img/face3.png" alt="" />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  section.about--big {
+    background-color: $dark-grey;
+    padding: 64px 0 0;
+    overflow: hidden;
+
+    .about__img {
+      width: 100%;
+      margin: 0 auto;
+
+      transform-origin: center top;
+      text-align: center;
+
+      img {
+        transform: translateY(24px);
+        width: 100%;
+        filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.3)) brightness(130%);
+      }
+    }
+  }
+
+  @media only screen and (min-width: $size-sm) {
+    section.about--big {
+      .about__img {
+        width: 80%;
+      }
+    }
+  }
+  @media only screen and (min-width: $size-lg) {
+    section.about--big {
+      .about__img {
+        width: 60%;
+      }
+    }
+  }
+  @media only screen and (min-width: $size-xl) {
+    section.about--big {
+      .about__img {
+        width: 50%;
+        margin: 16px auto 0;
+      }
+    }
+  }
+</style>

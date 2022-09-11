@@ -1,0 +1,198 @@
+---
+import SectionHeroSlider from './SectionHeroSlider.astro'
+---
+
+<section class="hero">
+  <div class="hero__background">
+    <img src="img/wave1.svg" alt="" />
+    <img src="img/wave2.svg" alt="" />
+  </div>
+  <div class="container">
+    <div class="hero__text">
+      <h1>Vše v<br />jednom<span class="primary-color glow">.</span></h1>
+      <div class="sub">Student vývoje počítačových technologií</div>
+    </div>
+
+    <div class="hero__work">
+      <div class="work__text">
+        <div>Mé práce</div>
+        <div>
+          <a href="portfolio.html" class="secondary-color">- Všechny výtvory</a>
+        </div>
+      </div>
+      <SectionHeroSlider />
+    </div>
+  </div>
+  <div class="scroll-down">
+    <div class="mousey">
+      <div class="scroller"></div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section.hero {
+    margin: 0;
+    position: relative;
+
+    height: 91vh;
+    min-height: 650px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    box-shadow: 0 0 32px 16px rgba($color: #000, $alpha: 0.3);
+
+    z-index: 1;
+
+    .hero__background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      img {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+
+    .hero__text {
+      padding: 10% 0 0;
+
+      .sub {
+        color: $grey;
+        font-size: 18px;
+      }
+    }
+
+    .hero__work {
+      .work__text {
+        margin: 32px 0 0;
+        display: flex;
+        justify-content: space-between;
+
+        font-weight: bold;
+        font-size: 16px;
+
+        div {
+          margin: 0;
+        }
+
+        //odkaz na všechny práce
+        a:focus,
+        a:hover {
+          border-bottom: 2px solid $secondary;
+        }
+      }
+    }
+
+    .scroll-down {
+      display: none;
+      visibility: 0;
+      z-index: 5;
+      position: absolute;
+      width: 100%;
+
+      bottom: 16px;
+
+      .mousey {
+        margin: 0 auto;
+        width: 3px;
+        padding: 10px 15px;
+        height: 35px;
+        border: 3px solid $secondary;
+        border-radius: 25px;
+        box-sizing: content-box;
+
+        .scroller {
+          width: 3px;
+          height: 10px;
+          border-radius: 25%;
+          background-color: $secondary;
+          animation-name: scroll;
+          animation-duration: 1.4s;
+          animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(14px);
+        opacity: 0;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 576px) {
+  }
+
+  @media only screen and (min-width: $size-md) {
+    section.hero {
+      height: 100vh;
+      .hero__text {
+        padding: 0 0 0;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $size-lg) {
+    section.hero {
+      .hero__text {
+        .sub {
+          font-size: 24px;
+        }
+      }
+
+      .swiper-container .swiper-slide .swiper-slide__text {
+        font-size: 18px;
+      }
+
+      .scroll-down {
+        display: block;
+        visibility: 1;
+
+        .mousey {
+          width: 3px;
+          padding: 8px 12px;
+          height: 28px;
+
+          .scroller {
+            width: 3px;
+            height: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: $size-xl) {
+    section.hero {
+      .scroll-down {
+        bottom: 4%;
+        .mousey {
+          width: 3px;
+          padding: 10px 15px;
+          height: 35px;
+
+          .scroller {
+            width: 3px;
+            height: 10px;
+          }
+        }
+      }
+    }
+  }
+</style>

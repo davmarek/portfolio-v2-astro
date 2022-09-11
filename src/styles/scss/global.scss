@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+* + * {
+  margin: 1em 0 0 0;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  //font-weight: 500;
+  margin: 0;
+  padding: 0;
+
+  color: white;
+  background-color: $black;
+
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 32px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+main {
+  margin: 0;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -1px;
+
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.primary-color {
+  color: $primary;
+}
+.primary-color.glow {
+  text-shadow: 0 0 1rem $primary;
+}
+
+.secondary-color {
+  color: $secondary;
+}
+.secondary-color.glow {
+  text-shadow: 0 0 1rem $secondary;
+}
+
+section {
+  margin-top: 0;
+}
+
+body > div:not([class]) {
+  display: none !important;
+  visibility: hidden;
+}
